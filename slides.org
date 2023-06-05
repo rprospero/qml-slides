@@ -1,0 +1,172 @@
+#+TITLE: QML Tutorial
+#+SUBTITLE: Better GUI with less effort
+#+Author: Adam Washington
+#+Date: 2023-06-28
+#+SETUPFILE: ~/annex/slides/theme.org
+#+OPTIONS:  toc:nil H:2
+
+* Introduction
+
+** Introduction
+
+This repo is a tutorial set for understanding using QML with Python
+for creating GUIs.  Python was chosen due to its status as a modern
+/lingua franca/ of coding, but the concepts apply to [[https://wiki.qt.io/Language_Bindings][over a dozen
+languages]].  In fact, the QML files allows changing the backend
+implementation language without making any changes to the interface.
+
+Through a series of alternating sections, we'll create a small data
+analysis application.  We will attempt to alternate making changes to
+the python and the QML to help emphasise the separation.
+
+* Hello World
+
+** Full Text
+
+We'll start with the simplest possible QML example.
+
+#+BEGIN_SRC js :tangle hello/view.qml :noweb yes
+<<SimpleQMLImport>>
+
+<<HelloContainer>>
+#+END_SRC
+
+** Imports
+
+#+NAME:SimpleQMLImport
+#+BEGIN_SRC js
+import QtQuick 2.0
+#+END_SRC
+
+Every QML file starts with a set of imports.  You will always need to
+import `QtQuick`, as it is the default QML library.  We'll encounter
+more libraries as we continue.
+
+** Widgets
+
+***                                                                   :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+#+NAME:HelloTextWidget
+#+BEGIN_SRC js
+Text {
+  text: "Hello World!"
+  anchors.centerIn: parent
+}
+#+END_SRC
+
+***                                                                   :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+
+- Widget type followed by curly bracket
+- Attribute name, then colon, then value
+
+** Positioning
+
+There are two ways to position widgets in a window
+
+***                                                               :B_columns:
+:PROPERTIES:
+:BEAMER_env: columns
+:END:
+
+
+**** Anchors                                                        :B_block:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+
+- Describe constraints between edges of widgets
+- Full control of positioning
+- Lots of work
+
+#+BEGIN_SRC js
+  anchors.left: parent.left
+  anchors.right: closeButton.left
+  anchors.top: parent.top
+  height: parent.height/2
+#+END_SRC
+
+**** Layouts                                                        :B_block:
+:PROPERTIES:
+:BEAMER_col: 0.5
+:BEAMER_env: block
+:END:
+
+- ColumnLayout, RowLayout, GridLayout
+- Simpler to use
+- Handle arbitrary number of Widgets
+
+#+BEGIN_SRC js
+import QtQuick.Layouts 1.2
+#+END_SRC
+
+** Containers
+
+#+Name:HelloContainer
+#+BEGIN_SRC js :noweb yes
+Rectangle {
+  width: 200
+  height: 200
+  color: "green"
+  <<HelloTextWidget>>
+}
+#+END_SRC
+
+** Python Loading
+
+Now we need to write some python to actually display the QML file
+
+#+BEGIN_SRC python :tangle hello/main.py :noweb yes
+from PySide2.QtQuick import QQuickView
+<<QApplicationCreate>>
+<<QQuickView>>
+<<QApplicationRun>>
+#+END_SRC
+
+** QApplication
+
+- Handles the busywork of running a GUI (e.g. managing event loop)
+- Takes a set of command line arguments
+  - Better integration into user environment
+  - Enable visually impaired users to customise display
+
+***                                                               :B_example:
+:PROPERTIES:
+:BEAMER_env: example
+:END:
+#+Name: QApplicationCreate
+#+BEGIN_SRC python
+from PySide2.QtWidgets import QApplication
+import sys
+
+app = QApplication(sys.argv)
+#+END_SRC
+
+***                                                               :B_example:
+:PROPERTIES:
+:BEAMER_env: example
+:END:
+
+#+Name: QApplicationRun
+#+BEGIN_SRC python
+app.exec_()
+#+END_SRC
+
+
+** QQuickView
+
+- Handles the display of the QML file
+- =setSource= picks the file
+- Must `show` the view for it to appear on screen
+
+#+Name: QQuickView
+#+BEGIN_SRC python
+view = QQuickView()
+view.setSource("view.qml")
+view.show()
+#+END_SRC
