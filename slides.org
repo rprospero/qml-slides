@@ -8,8 +8,18 @@
 
 * Introduction
 
-** Introduction
+** QML
 
+- A declarative method for defining GUIs
+- Based on the Qt library
+- Supports [[https://wiki.qt.io/Language_Bindings][over a dozen languages]].
+- Declarative GUI, not imperative
+- Divides code into a =model= and a =view=
+
+***                                                                  :B_note:
+:PROPERTIES:
+:BEAMER_env: note
+:END:
 This repo is a tutorial set for understanding using QML with Python
 for creating GUIs.  Python was chosen due to its status as a modern
 /lingua franca/ of coding, but the concepts apply to [[https://wiki.qt.io/Language_Bindings][over a dozen
@@ -19,6 +29,37 @@ implementation language without making any changes to the interface.
 Through a series of alternating sections, we'll create a small data
 analysis application.  We will attempt to alternate making changes to
 the python and the QML to help emphasise the separation.
+
+** Model
+
+- Performs detailed language and calculations
+- Written in your favourite programming language
+- Has *no knowledge* of the screen or window
+- Only acts via =Properties=, =Signals=, and =Slots=
+
+** Vocab
+
+The Qt object model has a couple of pieces of vocab
+
+  - Signal :: A message which may trigger actions from multiple parts of the application
+  - Slot :: A routine that can be performed.  Can be connected to a signal
+  - Property :: A value that can be read and optionally written.  May emit a signal when changed.
+
+** View
+
+- Describes the on screen display of the model
+- Always written in QML
+- Used to connect the Properties, Signals, and Slots of the models
+
+** Why Bother?
+
+- Code reuse
+  - A model can have multiple views
+  - A view can apply to multiple models
+- Makes code easy to test
+- Less bugs
+- Shorter, more readable code
+- No name litter
 
 * Hello World
 
