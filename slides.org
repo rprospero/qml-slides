@@ -293,3 +293,69 @@ text: myStats.x_mean + ", " + myStats.y_mean
 ** Exercises
 
 - Create a new property to display the sum of the columns
+
+* Display
+
+** Create a Header
+
+We're going to add some header text to our window
+
+#+Name: DisplayHeader
+#+BEGIN_SRC js
+Text {
+  id: titleText
+  text: "Stat Calculator"
+  anchors.top: parent.top
+  anchors.horizontalCenter: parent.horizontalCenter
+}
+#+END_SRC
+
+** Data Display
+
+We'll now display the x and y mean in a grid, instead of just a single label
+
+#+Name: DisplayContent
+#+BEGIN_SRC js
+GridLayout {
+  anchors.top: titleText.bottom
+  anchors.bottom: parent.bottom
+  anchors.left: parent.left
+  anchors.right: parent.right
+
+  columns: 2
+
+  Text {text: "X mean"}
+  Text {text: myStats.x_mean}
+  Text {text: "Y mean"}
+  Text {text: myStats.y_mean}
+}
+#+END_SRC
+
+This also requires that we import =QtQuick.Layouts 1.2=
+
+#+BEGIN_SRC js :tangle display/view.qml :exports none :noweb yes
+import QtQuick 2.0
+import QtQuick.Layouts 1.2
+import Tutorial 1.0
+
+Rectangle {
+  width: 200
+  height: 200
+  color: "#F0F0F0"
+
+  Stats {
+    id: myStats
+  }
+
+  <<DisplayHeader>>
+
+  <<DisplayContent>>
+}
+#+END_SRC
+
+** Exercises
+
+- Put the X and Y means on the same row
+- Move the title to the bottom of the window
+- Move the title to the left side of the window
+- Remove the GridLayout and layout the entire window with anchors (this will be tedious).
