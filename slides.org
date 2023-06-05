@@ -170,3 +170,108 @@ view = QQuickView()
 view.setSource("view.qml")
 view.show()
 #+END_SRC
+
+** Exercises
+
+- Change the background to a less garish colour
+- Give a more personal greeting
+
+* Compute Stats
+
+** Model
+
+We introduce our first data model class.
+
+#+BEGIN_SRC python :tangle stats/model.py :noweb yes
+import numpy as np
+from PySide2.QtCore import QObject, Property
+from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
+class Stats(QObject):
+  _data = None
+  def __init__(self):
+    QObject.__init__(self)
+    self.data_ = np.loadtxt("data.txt")
+  <<PropertyFloat>>
+  def x_mean(self):
+    return np.mean(self.data_[:, 0])
+  <<PropertyFloat>>
+  def y_mean(self):
+    return np.mean(self.data_[:, 1])
+<<QmlRegisterType>>
+#+END_SRC
+
+#+BEGIN_SRC python :tangle stats/main.py :noweb yes :exports none
+from PySide2.QtQuick import QQuickView
+import model
+<<QApplicationCreate>>
+<<QQuickView>>
+<<QApplicationRun>>
+#+END_SRC
+
+** qmlRegisterType
+
+#+NAME: QmlRegisterType
+#+BEGIN_SRC js
+qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
+#+END_SRC
+
+- Make python data accessible in QML
+- Can only be performed on classes that inherit from QObject
+
+** Property
+
+#+NAME: PropertyFloat
+#+BEGIN_SRC python
+@Property(float)
+#+END_SRC
+
+- Makes class data accessible from QML
+- Tells QML that the value is a =float=
+- Accessible by the function name
+
+** Data View
+
+#+BEGIN_SRC js :tangle stats/view.qml :noweb yes
+import QtQuick 2.0
+<<TutorialImport>>
+
+Rectangle {
+  width: 200
+  height: 200
+  color: "#F0F0F0"
+  <<LoadStats>>
+  Text {
+    <<ViewStats>>
+    anchors.centerIn: parent
+  }
+}
+#+END_SRC
+
+** Tutorial Import
+
+#+NAME: TutorialImport
+#+BEGIN_SRC js
+import Tutorial 1.0
+#+END_SRC
+
+Import the QML type that we declared earlier
+
+** Load Stats
+
+Create an instance of the stats object we defined earlier
+
+#+NAME: LoadStats
+#+BEGIN_SRC js
+Stats {id: myStats;}
+#+END_SRC
+
+Add am instance of the =Stats= class we created to our application
+
+#+NAME: ViewStats
+#+BEGIN_SRC js
+text: myStats.x_mean + ", " + myStats.y_mean
+#+END_SRC
+
+** Exercises
+
+- Create a new property to display the sum of the columns
