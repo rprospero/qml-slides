@@ -3,6 +3,7 @@
 #+Author: Adam Washington
 #+Date: 2023-06-28
 #+SETUPFILE: ~/annex/slides/theme.org
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
 #+OPTIONS:  toc:nil H:2
 
 * Introduction
@@ -44,10 +45,6 @@ more libraries as we continue.
 
 ** Widgets
 
-***                                                                   :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
 #+NAME:HelloTextWidget
 #+BEGIN_SRC js
 Text {
@@ -56,53 +53,40 @@ Text {
 }
 #+END_SRC
 
-***                                                                   :BMCOL:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:END:
 
 - Widget type followed by curly bracket
 - Attribute name, then colon, then value
 
-** Positioning
 
-There are two ways to position widgets in a window
-
-***                                                               :B_columns:
-:PROPERTIES:
-:BEAMER_env: columns
-:END:
-
-
-**** Anchors                                                        :B_block:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:BEAMER_env: block
-:END:
+** Anchors
 
 - Describe constraints between edges of widgets
 - Full control of positioning
 - Lots of work
 
 #+BEGIN_SRC js
+Button {
   anchors.left: parent.left
   anchors.right: closeButton.left
   anchors.top: parent.top
   height: parent.height/2
+}
 #+END_SRC
 
-**** Layouts                                                        :B_block:
-:PROPERTIES:
-:BEAMER_col: 0.5
-:BEAMER_env: block
-:END:
+** Layouts
 
-- ColumnLayout, RowLayout, GridLayout
+- =ColumnLayout=, =RowLayout=, =GridLayout=
 - Simpler to use
 - Handle arbitrary number of Widgets
 
 #+BEGIN_SRC js
 import QtQuick.Layouts 1.2
+
+ColumnLayout {
+  Text {text: "Top"}
+  Text {text: "Middle"}
+  Text {text: "Bottom"}
+}j
 #+END_SRC
 
 ** Containers
@@ -135,10 +119,6 @@ from PySide2.QtQuick import QQuickView
   - Better integration into user environment
   - Enable visually impaired users to customise display
 
-***                                                               :B_example:
-:PROPERTIES:
-:BEAMER_env: example
-:END:
 #+Name: QApplicationCreate
 #+BEGIN_SRC python
 from PySide2.QtWidgets import QApplication
@@ -147,10 +127,7 @@ import sys
 app = QApplication(sys.argv)
 #+END_SRC
 
-***                                                               :B_example:
-:PROPERTIES:
-:BEAMER_env: example
-:END:
+Use the =exec_= method to start the application
 
 #+Name: QApplicationRun
 #+BEGIN_SRC python
