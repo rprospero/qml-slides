@@ -207,14 +207,14 @@ from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 class Stats(QObject):
   _data = None
   def __init__(self):
-    QObject.__init__(self)
-    self.data_ = np.loadtxt("data.txt")
+	QObject.__init__(self)
+	self.data_ = np.loadtxt("data.txt")
   <<PropertyFloat>>
   def x_mean(self):
-    return np.mean(self.data_[:, 0])
+	return np.mean(self.data_[:, 0])
   <<PropertyFloat>>
   def y_mean(self):
-    return np.mean(self.data_[:, 1])
+	return np.mean(self.data_[:, 1])
 <<QmlRegisterType>>
 #+END_SRC
 
@@ -259,8 +259,8 @@ Rectangle {
   color: "#F0F0F0"
   <<LoadStats>>
   Text {
-    <<ViewStats>>
-    anchors.centerIn: parent
+	<<ViewStats>>
+	anchors.centerIn: parent
   }
 }
 #+END_SRC
@@ -344,7 +344,7 @@ Rectangle {
   color: "#F0F0F0"
 
   Stats {
-    id: myStats
+	id: myStats
   }
 
   <<DisplayHeader>>
@@ -383,8 +383,8 @@ time the =dataChanged= signal is emitted.
 #+BEGIN_SRC python
 @Property(str, notify=dataChanged)
 def filename(self):
-    """ The name of the data file """
-    return self._filename
+	""" The name of the data file """
+	return self._filename
 #+END_SRC
 
 We'll also want to update the =Property= decorator for the other
@@ -400,10 +400,10 @@ but takes an extra parameter for the new value.  We emit the
 #+BEGIN_SRC python
 @filename.setter
 def filename(self, name):
-    """ Load a new data file """
-    self._filename = name
-    self._data = np.loadtxt(name)
-    self.dataChanged.emit()
+	""" Load a new data file """
+	self._filename = name
+	self._data = np.loadtxt(name)
+	self.dataChanged.emit()
 #+END_SRC
 
 #+BEGIN_SRC python :tangle filename/model.py :noweb yes :exports none
@@ -412,32 +412,32 @@ from PySide2.QtCore import QObject, Property, Signal
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 
 class Stats(QObject):
-    _data = None # The numbers to calculate over
-    _filename = "";
+	_data = None # The numbers to calculate over
+	_filename = "";
 
-    def __init__(self):
+	def __init__(self):
 	""" Create the Stats object """
 	QObject.__init__(self)
 
-    <<FilenameSignal>>
-    dataChanged = Signal()
+	<<FilenameSignal>>
+	dataChanged = Signal()
 
-    <<FilenameGetter>>
+	<<FilenameGetter>>
 
-    <<FilenameSetter>>
+	<<FilenameSetter>>
 
-    @Property(float, notify=dataChanged)
-    def x_mean(self):
+	@Property(float, notify=dataChanged)
+	def x_mean(self):
 	""" The mean of the first column """
 	if self._data is None:
-	    return 0
+		return 0
 	return np.mean(self._data[:, 0])
 
-    @Property(float, notify=dataChanged)
-    def y_mean(self):
+	@Property(float, notify=dataChanged)
+	def y_mean(self):
 	""" The mean of the second column """
 	if self._data is None:
-	    return 0
+		return 0
 	return np.mean(self._data[:, 1])
 
 qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
@@ -503,12 +503,12 @@ We have the file dialog, but we need a button to trigger the dialog
 #+NAME: FileButton
 #+BEGIN_SRC js
 Button {
-    id: loadButton
-    anchors.top: titleText.bottom
-    anchors.left: parent.left
-    anchors.right: parent.right
-    text: "Load file"
-    onClicked: fileDialog.open()
+	id: loadButton
+	anchors.top: titleText.bottom
+	anchors.left: parent.left
+	anchors.right: parent.right
+	text: "Load file"
+	onClicked: fileDialog.open()
 }
 #+END_SRC
 
