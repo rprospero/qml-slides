@@ -787,6 +787,13 @@ Rectangle {
 }
 #+END_SRC
 
+** Exercises
+
+- The current chart range is hard coded. Add the necessary data
+  properties to the Stats model to allow the axes to scale with the
+  data.
+
+
 
 
 * Discussion
