@@ -4,6 +4,7 @@
 #+Date: 2023-06-28
 #+SETUPFILE: ~/annex/slides/theme.org
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_THEME: dracula
 #+OPTIONS:  toc:nil H:2
 
 * Introduction
