@@ -29,17 +29,17 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide"><h1 class="title">QML Tutorial</h1><p class="subtitle">Better GUI with less effort</p>
-<h2 class="author">Adam Washington</h2><h2 class="date">2023-06-28</h2><p class="date">Created: 2023-06-27 Tue 18:02</p>
+<h2 class="author">Adam Washington</h2><h2 class="date">2023-06-28</h2><p class="date">Created: 2023-06-27 Tue 18:19</p>
 </section>
 
 <section>
-<section id="slide-org1106709">
-<h2 id="org1106709"><span class="section-number-2">1.</span> Introduction</h2>
+<section id="slide-org75a0029">
+<h2 id="org75a0029"><span class="section-number-2">1.</span> Introduction</h2>
 <div class="outline-text-2" id="text-1">
 </div>
 </section>
-<section id="slide-orgb8dc054">
-<h3 id="orgb8dc054"><span class="section-number-3">1.1.</span> QML</h3>
+<section id="slide-org1e57122">
+<h3 id="org1e57122"><span class="section-number-3">1.1.</span> QML</h3>
 <ul>
 <li>A declarative method for defining GUIs</li>
 <li>Based on the Qt library</li>
@@ -67,8 +67,8 @@ the python and the QML to help emphasise the separation.
 </aside>
 
 </section>
-<section id="slide-org3e34c43">
-<h3 id="org3e34c43"><span class="section-number-3">1.2.</span> Model</h3>
+<section id="slide-org438410e">
+<h3 id="org438410e"><span class="section-number-3">1.2.</span> Model</h3>
 <ul>
 <li>Performs detailed language and calculations</li>
 <li>Written in your favourite programming language</li>
@@ -78,8 +78,8 @@ the python and the QML to help emphasise the separation.
 </ul>
 
 </section>
-<section id="slide-org0fd72f2">
-<h3 id="org0fd72f2"><span class="section-number-3">1.3.</span> Vocab</h3>
+<section id="slide-org75c8e5a">
+<h3 id="org75c8e5a"><span class="section-number-3">1.3.</span> Vocab</h3>
 <p>
 The Qt object model has a couple of pieces of vocab
 </p>
@@ -92,8 +92,8 @@ The Qt object model has a couple of pieces of vocab
 </dl>
 
 </section>
-<section id="slide-orgd5c495f">
-<h3 id="orgd5c495f"><span class="section-number-3">1.4.</span> View</h3>
+<section id="slide-orgaf7e4a9">
+<h3 id="orgaf7e4a9"><span class="section-number-3">1.4.</span> View</h3>
 <ul>
 <li>Describes the on screen display of the model</li>
 <li>Always written in QML</li>
@@ -102,8 +102,8 @@ The Qt object model has a couple of pieces of vocab
 </ul>
 
 </section>
-<section id="slide-org2c2400e">
-<h3 id="org2c2400e"><span class="section-number-3">1.5.</span> Why Bother?</h3>
+<section id="slide-org5649191">
+<h3 id="org5649191"><span class="section-number-3">1.5.</span> Why Bother?</h3>
 <ul>
 <li>Code reuse
 <ul>
@@ -121,13 +121,13 @@ The Qt object model has a couple of pieces of vocab
 </section>
 </section>
 <section>
-<section id="slide-org0bd9208">
-<h2 id="org0bd9208"><span class="section-number-2">2.</span> Hello World</h2>
+<section id="slide-orgecc1f87">
+<h2 id="orgecc1f87"><span class="section-number-2">2.</span> Hello World</h2>
 <div class="outline-text-2" id="text-2">
 </div>
 </section>
-<section id="slide-orgd7736f7">
-<h3 id="orgd7736f7"><span class="section-number-3">2.1.</span> Full Text</h3>
+<section id="slide-org8be4fe4">
+<h3 id="org8be4fe4"><span class="section-number-3">2.1.</span> Full Text</h3>
 <p>
 We'll start with the simplest possible QML example.
 </p>
@@ -149,8 +149,8 @@ Rectangle <span style="color: #e392ff;">{</span>
 </div>
 
 </section>
-<section id="slide-orge9b0324">
-<h3 id="orge9b0324"><span class="section-number-3">2.2.</span> Imports</h3>
+<section id="slide-org57d0ae6">
+<h3 id="org57d0ae6"><span class="section-number-3">2.2.</span> Imports</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="SimpleQMLImport"  ><code trim><span style="color: #e392ff;">import</span> QtQuick 2.0
@@ -164,8 +164,8 @@ more libraries as we continue.
 </p>
 
 </section>
-<section id="slide-org04ea7d9">
-<h3 id="org04ea7d9"><span class="section-number-3">2.3.</span> Widgets</h3>
+<section id="slide-org555a132">
+<h3 id="org555a132"><span class="section-number-3">2.3.</span> Widgets</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="HelloTextWidget"  ><code trim>Text <span style="color: #e392ff;">{</span>
@@ -184,8 +184,8 @@ more libraries as we continue.
 
 
 </section>
-<section id="slide-org115ca8f">
-<h3 id="org115ca8f"><span class="section-number-3">2.4.</span> Anchors</h3>
+<section id="slide-org0f4e56a">
+<h3 id="org0f4e56a"><span class="section-number-3">2.4.</span> Anchors</h3>
 <ul>
 <li>Describe constraints between edges of widgets</li>
 <li>Full control of positioning</li>
@@ -205,8 +205,8 @@ more libraries as we continue.
 </div>
 
 </section>
-<section id="slide-orgcfe7b33">
-<h3 id="orgcfe7b33"><span class="section-number-3">2.5.</span> Layouts</h3>
+<section id="slide-orge79708c">
+<h3 id="orge79708c"><span class="section-number-3">2.5.</span> Layouts</h3>
 <ul>
 <li><code>ColumnLayout</code>, <code>RowLayout</code>, <code>GridLayout</code></li>
 <li>Simpler to use</li>
@@ -227,8 +227,8 @@ ColumnLayout <span style="color: #e392ff;">{</span>
 </div>
 
 </section>
-<section id="slide-org99175c9">
-<h3 id="org99175c9"><span class="section-number-3">2.6.</span> Containers</h3>
+<section id="slide-org2a0d8f5">
+<h3 id="org2a0d8f5"><span class="section-number-3">2.6.</span> Containers</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="HelloContainer"  ><code trim>Rectangle <span style="color: #e392ff;">{</span>
@@ -244,8 +244,8 @@ ColumnLayout <span style="color: #e392ff;">{</span>
 </div>
 
 </section>
-<section id="slide-org961ba2e">
-<h3 id="org961ba2e"><span class="section-number-3">2.7.</span> Python Loading</h3>
+<section id="slide-orgc95d195">
+<h3 id="orgc95d195"><span class="section-number-3">2.7.</span> Python Loading</h3>
 <p>
 Now we need to write some python to actually display the QML file
 </p>
@@ -265,8 +265,8 @@ app.exec_<span style="color: #e392ff;">()</span>
 </div>
 
 </section>
-<section id="slide-orgfb4a197">
-<h3 id="orgfb4a197"><span class="section-number-3">2.8.</span> QApplication</h3>
+<section id="slide-org078a94f">
+<h3 id="org078a94f"><span class="section-number-3">2.8.</span> QApplication</h3>
 <ul>
 <li>Handles the busywork of running a GUI (e.g. managing event loop)</li>
 <li>Takes a set of command line arguments
@@ -299,8 +299,8 @@ Use the <code>exec_</code> method to start the application
 
 
 </section>
-<section id="slide-orgb7a62ad">
-<h3 id="orgb7a62ad"><span class="section-number-3">2.9.</span> QQuickView</h3>
+<section id="slide-org4a79172">
+<h3 id="org4a79172"><span class="section-number-3">2.9.</span> QQuickView</h3>
 <ul>
 <li>Handles the display of the QML file</li>
 <li><code>setSource</code> picks the file</li>
@@ -317,8 +317,8 @@ view.show<span style="color: #e392ff;">()</span>
 </div>
 
 </section>
-<section id="slide-orgc520ebf">
-<h3 id="orgc520ebf"><span class="section-number-3">2.10.</span> Exercises</h3>
+<section id="slide-orgac49554">
+<h3 id="orgac49554"><span class="section-number-3">2.10.</span> Exercises</h3>
 <ul>
 <li>Change the background to a less garish colour</li>
 <li>Give a more personal greeting</li>
@@ -328,13 +328,13 @@ view.show<span style="color: #e392ff;">()</span>
 </section>
 </section>
 <section>
-<section id="slide-org845ba60">
-<h2 id="org845ba60"><span class="section-number-2">3.</span> Compute Stats</h2>
+<section id="slide-org54af9cb">
+<h2 id="org54af9cb"><span class="section-number-2">3.</span> Compute Stats</h2>
 <div class="outline-text-2" id="text-3">
 </div>
 </section>
-<section id="slide-org844f262">
-<h3 id="org844f262"><span class="section-number-3">3.1.</span> Model</h3>
+<section id="slide-org1e44d40">
+<h3 id="org1e44d40"><span class="section-number-3">3.1.</span> Model</h3>
 <p>
 We introduce our first data model class.
 </p>
@@ -360,8 +360,8 @@ qmlRegisterType<span style="color: #e392ff;">(</span>Stats, <span style="color: 
 </div>
 
 </section>
-<section id="slide-orgd212d47">
-<h3 id="orgd212d47"><span class="section-number-3">3.2.</span> qmlRegisterType</h3>
+<section id="slide-orgae38020">
+<h3 id="orgae38020"><span class="section-number-3">3.2.</span> qmlRegisterType</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="QmlRegisterType"  ><code trim>qmlRegisterType<span style="color: #e392ff;">(</span>Stats, <span style="color: #00d4b2;">"Tutorial"</span>, 1, 0, <span style="color: #00d4b2;">"Stats"</span><span style="color: #e392ff;">)</span>
@@ -375,8 +375,8 @@ qmlRegisterType<span style="color: #e392ff;">(</span>Stats, <span style="color: 
 </ul>
 
 </section>
-<section id="slide-orgee24c3f">
-<h3 id="orgee24c3f"><span class="section-number-3">3.3.</span> Property</h3>
+<section id="slide-org1461a93">
+<h3 id="org1461a93"><span class="section-number-3">3.3.</span> Property</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python" id="PropertyFloat"  ><code trim><span style="color: #64ca4b;">@Property</span><span style="color: #e392ff;">(</span><span style="color: #00d1ff;">float</span><span style="color: #e392ff;">)</span>
@@ -391,8 +391,8 @@ qmlRegisterType<span style="color: #e392ff;">(</span>Stats, <span style="color: 
 </ul>
 
 </section>
-<section id="slide-org680bcf1">
-<h3 id="org680bcf1"><span class="section-number-3">3.4.</span> Data View</h3>
+<section id="slide-org64bff88">
+<h3 id="org64bff88"><span class="section-number-3">3.4.</span> Data View</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js"   ><code trim><span style="color: #e392ff;">import</span> QtQuick 2.0
@@ -412,8 +412,8 @@ Rectangle <span style="color: #e392ff;">{</span>
 </div>
 
 </section>
-<section id="slide-orgaad1da1">
-<h3 id="orgaad1da1"><span class="section-number-3">3.5.</span> Tutorial Import</h3>
+<section id="slide-orga12a2a9">
+<h3 id="orga12a2a9"><span class="section-number-3">3.5.</span> Tutorial Import</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="TutorialImport"  ><code trim><span style="color: #e392ff;">import</span> Tutorial 1.0
@@ -425,8 +425,8 @@ Import the QML type that we declared earlier
 </p>
 
 </section>
-<section id="slide-orgb6241a8">
-<h3 id="orgb6241a8"><span class="section-number-3">3.6.</span> Load Stats</h3>
+<section id="slide-org321d948">
+<h3 id="org321d948"><span class="section-number-3">3.6.</span> Load Stats</h3>
 <p>
 Create an instance of the stats object we defined earlier
 </p>
@@ -448,8 +448,8 @@ Add am instance of the <code>Stats</code> class we created to our application
 </div>
 
 </section>
-<section id="slide-org81bb460">
-<h3 id="org81bb460"><span class="section-number-3">3.7.</span> Exercises</h3>
+<section id="slide-orgac604d0">
+<h3 id="orgac604d0"><span class="section-number-3">3.7.</span> Exercises</h3>
 <ul>
 <li>Create a new property to display the sum of the columns</li>
 
@@ -458,13 +458,13 @@ Add am instance of the <code>Stats</code> class we created to our application
 </section>
 </section>
 <section>
-<section id="slide-orgc60cd27">
-<h2 id="orgc60cd27"><span class="section-number-2">4.</span> Display</h2>
+<section id="slide-orgff63520">
+<h2 id="orgff63520"><span class="section-number-2">4.</span> Display</h2>
 <div class="outline-text-2" id="text-4">
 </div>
 </section>
-<section id="slide-orgf59e296">
-<h3 id="orgf59e296"><span class="section-number-3">4.1.</span> Create a Header</h3>
+<section id="slide-org2b7666f">
+<h3 id="org2b7666f"><span class="section-number-3">4.1.</span> Create a Header</h3>
 <p>
 We're going to add some header text to our window
 </p>
@@ -481,8 +481,8 @@ We're going to add some header text to our window
 </div>
 
 </section>
-<section id="slide-org5e9d502">
-<h3 id="org5e9d502"><span class="section-number-3">4.2.</span> Data Display</h3>
+<section id="slide-orgcc69f8a">
+<h3 id="orgcc69f8a"><span class="section-number-3">4.2.</span> Data Display</h3>
 <p>
 We'll now display the x and y mean in a grid, instead of just a single label
 </p>
@@ -516,8 +516,8 @@ This also requires that we import
 </div>
 
 </section>
-<section id="slide-orgf549d1c">
-<h3 id="orgf549d1c"><span class="section-number-3">4.3.</span> Exercises</h3>
+<section id="slide-org692208b">
+<h3 id="org692208b"><span class="section-number-3">4.3.</span> Exercises</h3>
 <ul>
 <li>Put the X and Y means on the same row</li>
 <li>Move the title to the bottom of the window</li>
@@ -529,13 +529,13 @@ This also requires that we import
 </section>
 </section>
 <section>
-<section id="slide-org43f61eb">
-<h2 id="org43f61eb"><span class="section-number-2">5.</span> Filename</h2>
+<section id="slide-org4e63379">
+<h2 id="org4e63379"><span class="section-number-2">5.</span> Filename</h2>
 <div class="outline-text-2" id="text-5">
 </div>
 </section>
-<section id="slide-org79eb62c">
-<h3 id="org79eb62c"><span class="section-number-3">5.1.</span> Signal</h3>
+<section id="slide-org5f27d29">
+<h3 id="org5f27d29"><span class="section-number-3">5.1.</span> Signal</h3>
 <p>
 Allow the model to load any data file we want.  First, we'll need to
 add a signal that will emit when the file name is changed.  (This will
@@ -549,8 +549,8 @@ be more important later).
 </div>
 
 </section>
-<section id="slide-org5f7382f">
-<h3 id="org5f7382f"><span class="section-number-3">5.2.</span> Filename Property</h3>
+<section id="slide-org74ef126">
+<h3 id="org74ef126"><span class="section-number-3">5.2.</span> Filename Property</h3>
 <p>
 We now need to add a property for the file name.  The expanded
 <code>Property</code> tag tells the model to update the property's value every
@@ -572,8 +572,8 @@ properties to update them when the data is changed.
 </p>
 
 </section>
-<section id="slide-org24b0312">
-<h3 id="org24b0312"><span class="section-number-3">5.3.</span> Filename Setter</h3>
+<section id="slide-org8abccf5">
+<h3 id="org8abccf5"><span class="section-number-3">5.3.</span> Filename Setter</h3>
 <p>
 We're going to add our first property setter.  It's like the getter,
 but takes an extra parameter for the new value.  We emit the
@@ -592,8 +592,8 @@ but takes an extra parameter for the new value.  We emit the
 </div>
 
 </section>
-<section id="slide-org128f472">
-<h3 id="org128f472"><span class="section-number-3">5.4.</span> Update View</h3>
+<section id="slide-org00deaf4">
+<h3 id="org00deaf4"><span class="section-number-3">5.4.</span> Update View</h3>
 <p>
 Since the model now picks the file through the <code>filename</code> property, we
 need to update the view to pick a file.
@@ -609,8 +609,8 @@ need to update the view to pick a file.
 </div>
 
 </section>
-<section id="slide-orge0b7c5d">
-<h3 id="orge0b7c5d"><span class="section-number-3">5.5.</span> Exercises</h3>
+<section id="slide-orgfe62903">
+<h3 id="orgfe62903"><span class="section-number-3">5.5.</span> Exercises</h3>
 <ul>
 <li>Set title text to the name of the data file</li>
 
@@ -619,13 +619,13 @@ need to update the view to pick a file.
 </section>
 </section>
 <section>
-<section id="slide-org2143f63">
-<h2 id="org2143f63"><span class="section-number-2">6.</span> Interactive</h2>
+<section id="slide-orga0f318d">
+<h2 id="orga0f318d"><span class="section-number-2">6.</span> Interactive</h2>
 <div class="outline-text-2" id="text-6">
 </div>
 </section>
-<section id="slide-org8f71d61">
-<h3 id="org8f71d61"><span class="section-number-3">6.1.</span> Interactivity</h3>
+<section id="slide-orga99278c">
+<h3 id="orga99278c"><span class="section-number-3">6.1.</span> Interactivity</h3>
 <p>
 After all this time, we'll finally add a truly interactive component.
 Specifically, we'll add a <code>FileDialog</code> to the view to set the data
@@ -643,8 +643,8 @@ file.
 </div>
 
 </section>
-<section id="slide-org34009c5">
-<h3 id="org34009c5"><span class="section-number-3">6.2.</span> Button</h3>
+<section id="slide-org1870b36">
+<h3 id="org1870b36"><span class="section-number-3">6.2.</span> Button</h3>
 <p>
 We have the file dialog, but we need a button to trigger the dialog
 </p>
@@ -663,8 +663,8 @@ We have the file dialog, but we need a button to trigger the dialog
 </div>
 
 </section>
-<section id="slide-orgc3383e9">
-<h3 id="orgc3383e9"><span class="section-number-3">6.3.</span> Exercises</h3>
+<section id="slide-orgfa8ece0">
+<h3 id="orgfa8ece0"><span class="section-number-3">6.3.</span> Exercises</h3>
 <ul>
 <li>Using the <code>console.log</code> slot, bind to the <code>dataChanged</code> signal on
 the <code>Stats</code> model and print the file name to the console every time
@@ -678,13 +678,13 @@ file has been loaded.</li>
 </section>
 </section>
 <section>
-<section id="slide-org617e2ab">
-<h2 id="org617e2ab"><span class="section-number-2">7.</span> Display Tables</h2>
+<section id="slide-orgcabd2bf">
+<h2 id="orgcabd2bf"><span class="section-number-2">7.</span> Display Tables</h2>
 <div class="outline-text-2" id="text-7">
 </div>
 </section>
-<section id="slide-org4bc9d85">
-<h3 id="org4bc9d85"><span class="section-number-3">7.1.</span> QAbstractTableModel</h3>
+<section id="slide-orgf4b6270">
+<h3 id="orgf4b6270"><span class="section-number-3">7.1.</span> QAbstractTableModel</h3>
 <ul>
 <li>Thus far, every model that we've build has been based on QObject</li>
 <li>Special Subclasses for advanced data
@@ -698,8 +698,8 @@ file has been loaded.</li>
 </ul>
 
 </section>
-<section id="slide-org6a67c45">
-<h3 id="org6a67c45"><span class="section-number-3">7.2.</span> Mandataory Overloads</h3>
+<section id="slide-org4679145">
+<h3 id="org4679145"><span class="section-number-3">7.2.</span> Mandataory Overloads</h3>
 <dl>
 <dt>rowCount()</dt><dd>Number of data elements</dd>
 <dt>columnCount()</dt><dd>Number of properties on elements</dd>
@@ -708,8 +708,8 @@ file has been loaded.</li>
 </dl>
 
 </section>
-<section id="slide-org748773a">
-<h3 id="org748773a"><span class="section-number-3">7.3.</span> Recommended Overloads</h3>
+<section id="slide-orgd90617f">
+<h3 id="orgd90617f"><span class="section-number-3">7.3.</span> Recommended Overloads</h3>
 <dl>
 <dt>headerData(section, orientation, role)</dt><dd>Column headers</dd>
 <dt>setData(index, value, role)</dt><dd>Update an element by index</dd>
@@ -722,8 +722,8 @@ For our example app, we will not need these.
 </p>
 
 </section>
-<section id="slide-org188b5e9">
-<h3 id="org188b5e9"><span class="section-number-3">7.4.</span> Add Count Overloads</h3>
+<section id="slide-orga6ffe17">
+<h3 id="orga6ffe17"><span class="section-number-3">7.4.</span> Add Count Overloads</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python" id="RowColumnCount"  ><code trim><span style="color: #64ca4b;">@Slot</span><span style="color: #e392ff;">()</span>
@@ -741,8 +741,8 @@ For our example app, we will not need these.
 </div>
 
 </section>
-<section id="slide-org32f4b90">
-<h3 id="org32f4b90"><span class="section-number-3">7.5.</span> Add Data Overloads</h3>
+<section id="slide-org5cec43b">
+<h3 id="org5cec43b"><span class="section-number-3">7.5.</span> Add Data Overloads</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python" id="TableData"  ><code trim><span style="color: #64ca4b;">@Slot</span><span style="color: #e392ff;">()</span>
@@ -755,8 +755,8 @@ For our example app, we will not need these.
 </div>
 
 </section>
-<section id="slide-orgc387393">
-<h3 id="orgc387393"><span class="section-number-3">7.6.</span> Signals</h3>
+<section id="slide-org7bb8177">
+<h3 id="org7bb8177"><span class="section-number-3">7.6.</span> Signals</h3>
 <p>
 Just like other properties, the abstract models need signals to inform
 the view of changes.  Thankfully, the class provides a series of
@@ -777,8 +777,8 @@ helper functions.
 </div>
 
 </section>
-<section id="slide-org6335da0">
-<h3 id="org6335da0"><span class="section-number-3">7.7.</span> Table View</h3>
+<section id="slide-org49770f4">
+<h3 id="org49770f4"><span class="section-number-3">7.7.</span> Table View</h3>
 <div class="org-src-container">
 
 <pre  class="src src-python" id="ResetModel"  ><code trim>TableView <span style="color: #e392ff;">{</span>
@@ -800,8 +800,8 @@ helper functions.
 </div>
 
 </section>
-<section id="slide-org8a0a22b">
-<h3 id="org8a0a22b"><span class="section-number-3">7.8.</span> Exercises</h3>
+<section id="slide-org9c27b97">
+<h3 id="org9c27b97"><span class="section-number-3">7.8.</span> Exercises</h3>
 <ul>
 <li>The current code will produce glitches if the data file has more
 than two columns. Either ignore the other columns (easy) or allow an
@@ -812,13 +812,13 @@ arbitrary column number.</li>
 </section>
 </section>
 <section>
-<section id="slide-org86880a1">
-<h2 id="org86880a1"><span class="section-number-2">8.</span> Charting</h2>
+<section id="slide-orgd085098">
+<h2 id="orgd085098"><span class="section-number-2">8.</span> Charting</h2>
 <div class="outline-text-2" id="text-8">
 </div>
 </section>
-<section id="slide-org4d8583d">
-<h3 id="org4d8583d"><span class="section-number-3">8.1.</span> One Model, Many Views</h3>
+<section id="slide-orgf7313a2">
+<h3 id="orgf7313a2"><span class="section-number-3">8.1.</span> One Model, Many Views</h3>
 <p>
 Using the <code>QAbstractTableModel</code> allows us to take advantage of
 multiple views that can use this model.
@@ -829,8 +829,8 @@ Change how we view the data without changing a single line of Python.
 </p>
 
 </section>
-<section id="slide-org8ee525c">
-<h3 id="org8ee525c"><span class="section-number-3">8.2.</span> ChartView</h3>
+<section id="slide-org0e74dd4">
+<h3 id="org0e74dd4"><span class="section-number-3">8.2.</span> ChartView</h3>
 <div class="org-src-container">
 
 <pre  class="src src-js" id="ChartView"  ><code trim>ChartView <span style="color: #e392ff;">{</span>
@@ -858,8 +858,8 @@ Requires a new import
 </div>
 
 </section>
-<section id="slide-orgf84e1c4">
-<h3 id="orgf84e1c4"><span class="section-number-3">8.3.</span> Axes</h3>
+<section id="slide-org675020f">
+<h3 id="org675020f"><span class="section-number-3">8.3.</span> Axes</h3>
 <p>
 Give ranges for our X and Y axes
 </p>
@@ -881,8 +881,8 @@ ValueAxis <span style="color: #e392ff;">{</span>
 </div>
 
 </section>
-<section id="slide-org336f0d9">
-<h3 id="org336f0d9"><span class="section-number-3">8.4.</span> Series</h3>
+<section id="slide-org1f930e5">
+<h3 id="org1f930e5"><span class="section-number-3">8.4.</span> Series</h3>
 <p>
 Create a scatter plot
 </p>
@@ -899,8 +899,8 @@ Create a scatter plot
 </div>
 
 </section>
-<section id="slide-org308d91e">
-<h3 id="org308d91e"><span class="section-number-3">8.5.</span> Data</h3>
+<section id="slide-org7c3a8e8">
+<h3 id="org7c3a8e8"><span class="section-number-3">8.5.</span> Data</h3>
 <p>
 Connect the <code>myStats</code> model to the <code>series</code> scatter plot
 </p>
@@ -918,8 +918,8 @@ Connect the <code>myStats</code> model to the <code>series</code> scatter plot
 
 
 </section>
-<section id="slide-org325e013">
-<h3 id="org325e013"><span class="section-number-3">8.6.</span> Exercises</h3>
+<section id="slide-org9f08d51">
+<h3 id="org9f08d51"><span class="section-number-3">8.6.</span> Exercises</h3>
 <ul>
 <li>The current chart range is hard coded. Add the necessary data
 properties to the Stats model to allow the axes to scale with the
@@ -933,13 +933,13 @@ data.</li>
 </section>
 </section>
 <section>
-<section id="slide-org28d12c2">
-<h2 id="org28d12c2"><span class="section-number-2">9.</span> Discussion</h2>
+<section id="slide-org57bda32">
+<h2 id="org57bda32"><span class="section-number-2">9.</span> Discussion</h2>
 <div class="outline-text-2" id="text-9">
 </div>
 </section>
-<section id="slide-orgcb7becb">
-<h3 id="orgcb7becb"><span class="section-number-3">9.1.</span> Opinions on this training</h3>
+<section id="slide-org2774735">
+<h3 id="org2774735"><span class="section-number-3">9.1.</span> Opinions on this training</h3>
 <ul>
 <li>Would it be useful for Mantid developers?</li>
 <li>Would it be useful for Instrument Scientists?</li>
@@ -956,7 +956,7 @@ data.</li>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-totalTime: 600, plugins: [RevealNotes],
+totalTime: 6300, plugins: [RevealNotes],
 multiplex: {
     secret: null, // null if client
     id: '"bbebfa54fba8ab84"', // id, obtained from socket.io server
@@ -966,6 +966,9 @@ dependencies: [ { src: 'https://reveal-multiplex.glitch.me/socket.io/socket.io.j
 
 // Optional libraries used to extend on reveal.js
 dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
  { src: 'https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
 
 });
