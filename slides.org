@@ -685,6 +685,109 @@ TableView {
   than two columns. Either ignore the other columns (easy) or allow an
   arbitrary column number.
 
+* Charting
+
+** One Model, Many Views
+
+Using the =QAbstractTableModel= allows us to take advantage of
+multiple views that can use this model.
+
+Change how we view the data without changing a single line of Python.
+
+** ChartView
+
+#+NAME: ChartView
+#+BEGIN_SRC js :noweb no-export
+ChartView {
+	title: "Scatters"
+	anchors.top: loadButton.bottom
+	anchors.bottom: parent.bottom
+	anchors.left: parent.left
+	anchors.right: parent.right
+	antialiasing: true
+	<<Axes>>
+	<<ScatterPlot>>
+	<<ModelMapper>>
+}
+#+END_SRC
+
+Requires a new import
+
+#+BEGIN_SRC js
+import QtCharts 2.5
+#+END_SRC
+
+** Axes
+
+Give ranges for our X and Y axes
+
+#+NAME: Axes
+#+BEGIN_SRC js
+ValueAxis {
+	id: axisX
+	min: 0
+	max: 12
+}
+
+ValueAxis {
+	id: axisY
+	min: 0
+	max: 40
+}
+#+END_SRC
+
+** Series
+
+Create a scatter plot
+
+#+NAME: ScatterPlot
+#+BEGIN_SRC js
+ScatterSeries {
+	id: series
+	name: myStats.filename
+	axisX: axisX
+	axisY: axisY
+}
+#+END_SRC
+
+** Data
+
+Connect the =myStats= model to the =series= scatter plot
+
+#+NAME: ModelMapper
+#+BEGIN_SRC js
+VXYModelMapper {
+	model: myStats
+	series: series
+	xColumn:0
+	yColumn:1
+}
+#+END_SRC
+
+
+#+BEGIN_SRC js :tangle chart/view.qml :noweb yes :exports none
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Dialogs 1.3
+import QtQuick.Layouts 1.2
+import QtCharts 2.5
+import Tutorial 1.0
+
+Rectangle {
+  width: 800
+  height: 800
+  color: "#F0F0F0"
+
+  <<FilenameStats>>
+
+  <<FileDialog>>
+
+  <<ChartView>>
+
+}
+#+END_SRC
+
+
 
 * Discussion
 
