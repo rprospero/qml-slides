@@ -9,7 +9,7 @@ Rectangle {
 
   Stats {
     id: myStats
-    filename: "data.txt"
+    filename: "file:data.txt"
   }
 
   Text {

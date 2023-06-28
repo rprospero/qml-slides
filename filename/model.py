@@ -1,5 +1,5 @@
 import numpy as np
-from PySide2.QtCore import QObject, Property, Signal
+from PySide2.QtCore import QObject, Property, Signal, QUrl
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 
 class Stats(QObject):
@@ -12,7 +12,7 @@ class Stats(QObject):
 
         dataChanged = Signal()
 
-        @Property(str, notify=dataChanged)
+        @Property(QUrl, notify=dataChanged)
         def filename(self):
                 """ The name of the data file """
                 return self._filename
@@ -21,7 +21,7 @@ class Stats(QObject):
         def filename(self, name):
                 """ Load a new data file """
                 self._filename = name
-                self._data = np.loadtxt(name)
+                self._data = np.loadtxt(name.toLocalFile())
                 self.dataChanged.emit()
 
         @Property(float, notify=dataChanged)

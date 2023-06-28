@@ -33,7 +33,7 @@ class Stats(QAbstractTableModel):
 
         dataChanged = Signal()
 
-        @Property(str, notify=dataChanged)
+        @Property(QUrl, notify=dataChanged)
         def filename(self):
                 """ The name of the data file """
                 return self._filename

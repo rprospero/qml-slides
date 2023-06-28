@@ -11,13 +11,13 @@ Rectangle {
 
   Stats {
     id: myStats
-    filename: "data.txt"
+    filename: "file:data.txt"
   }
 
   FileDialog {
     id: fileDialog
     title: "Choose a data file"
-    onAccepted: myStats.filename = fileDialog.fileUrl.toString().substring(7)
+    onAccepted: myStats.filename = fileDialog.selectedFile
   }
 
   Text {
