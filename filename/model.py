@@ -7,10 +7,9 @@ class Stats(QObject):
         _filename = "";
 
         def __init__(self):
-        """ Create the Stats object """
-        QObject.__init__(self)
+            """ Create the Stats object """
+            QObject.__init__(self)
 
-        dataChanged = Signal()
         dataChanged = Signal()
 
         @Property(str, notify=dataChanged)
@@ -27,16 +26,16 @@ class Stats(QObject):
 
         @Property(float, notify=dataChanged)
         def x_mean(self):
-        """ The mean of the first column """
-        if self._data is None:
-                return 0
-        return np.mean(self._data[:, 0])
+            """ The mean of the first column """
+            if self._data is None:
+                    return 0
+            return np.mean(self._data[:, 0])
 
         @Property(float, notify=dataChanged)
         def y_mean(self):
-        """ The mean of the second column """
-        if self._data is None:
-                return 0
-        return np.mean(self._data[:, 1])
+            """ The mean of the second column """
+            if self._data is None:
+                    return 0
+            return np.mean(self._data[:, 1])
 
 qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
