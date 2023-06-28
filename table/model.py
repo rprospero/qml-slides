@@ -1,5 +1,5 @@
 import numpy as np
-from PySide2.QtCore import Property, Signal, Slot, QAbstractTableModel
+from PySide2.QtCore import Property, Signal, Slot, QAbstractTableModel, QUrl
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 
 class Stats(QAbstractTableModel):
