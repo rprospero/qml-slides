@@ -731,14 +731,14 @@ Give ranges for our X and Y axes
 #+BEGIN_SRC js
 ValueAxis {
         id: axisX
-        min: 0
-        max: 12
+        min: -5
+        max: 5
 }
 
 ValueAxis {
         id: axisY
-        min: 0
-        max: 40
+        min: -2
+        max: 2
 }
 #+END_SRC
 
@@ -785,6 +785,8 @@ Rectangle {
   color: "#F0F0F0"
 
   <<FilenameStats>>
+
+  <<FileButton>>
 
   <<FileDialog>>
 
