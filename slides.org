@@ -6,8 +6,8 @@
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
 #+REVEAL_THEME: dracula
 #+REVEAL_INIT_OPTIONS: totalTime: 6300, plugins: [RevealNotes]
-#+REVEAL_MULTIPLEX_ID: "bbebfa54fba8ab84"
-#+REVEAL_MULTIPLEX_SECRET: "16878852250022031037"
+#+REVEAL_MULTIPLEX_ID: bbebfa54fba8ab84
+#+REVEAL_MULTIPLEX_SECRET: 16878852250022031037
 #+REVEAL_MULTIPLEX_URL:  https://reveal-multiplex.glitch.me
 #+OPTIONS:  toc:nil H:2
 
