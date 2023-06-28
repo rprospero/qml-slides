@@ -581,15 +581,15 @@ For our example app, we will not need these.
 #+BEGIN_SRC python
 @Slot()
 def rowCount(self, parent):
-        if self._data is None:
+    if self._data is None:
         return 0
-        return self._data.shape[0]
+    return self._data.shape[0]
 
 @Slot()
 def columnCount(self, parent):
-        if self._data is None:
+    if self._data is None:
         return 0
-        return self._data.shape[1]
+    return self._data.shape[1]
 #+END_SRC
 
 ** Add Data Overloads
@@ -598,10 +598,10 @@ def columnCount(self, parent):
 #+BEGIN_SRC python
 @Slot()
 def data(self, index, role):
-        if self._data is None:
+    if self._data is None:
         return None
-        return float(self._data[index.row(),
-                                index.column()])
+    return float(self._data[index.row(),
+                            index.column()])
 #+END_SRC
 
 ** Signals
