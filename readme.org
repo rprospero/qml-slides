@@ -1,0 +1,63 @@
+#+TITLE: Qml Tutorial Readme
+
+This is the repository for my QML tutorial.  There's a couple of piece
+to take care of before we begin.
+
+* Establish a working environment
+
+For this tutorial, you will need both [[https://www.python.org][Python 3]] and [[https://git-scm.com][Git]]
+
+** Download the repo
+
+From the command prompt, in the convenient directory, run
+
+#+BEGIN_SRC sh
+git clone https://github.com/rprospero/qml-slides.git
+cd qml-slides
+git checkout tutorial
+#+END_SRC
+
+This will bring you onto the tutorial branch of the repo, which has all the code that we will be discussing.
+
+** Setup a python virtual environment
+
+We'll need certain python dependencies.  To not wreck your main
+python, we'll establish a virtual environment.
+
+#+BEGIN_SRC sh
+python -m venv .venv
+#+END_SRC
+
+We then need to active the environment, which can depend on your shell
+
+*** Windows PowerShell
+
+#+BEGIN_SRC powershell
+.venv\Scripts\Activate.ps1
+#+END_SRC
+
+*** Windows Dos Prompt
+
+#+BEGIN_SRC sh
+.venv\Scripts\activate.bat
+#+END_SRC
+
+
+*** Mac or Linux (not fish)
+
+#+BEGIN_SRC sh
+source .venv/bin/activate
+#+END_SRC
+
+** Install dependencies
+
+Now that we're in a custom python environment, we'll need to install our dependencies
+
+#+BEGIN_SRC sh
+pip install -r requirements.txt
+#+END_SRC
+
+
+* Access the Slides
+
+Once you have a working environment, access [[https://rprospero.github.io/qml-slides/][the slides]] to learn.
