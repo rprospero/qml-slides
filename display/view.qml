@@ -3,8 +3,8 @@ import QtQuick.Layouts 1.2
 import Tutorial 1.0
 
 Rectangle {
-  width: 200
-  height: 200
+  width: 600
+  height: 600
   color: "#F0F0F0"
 
   Stats {

@@ -3,49 +3,49 @@ from PySide2.QtCore import Property, Signal, Slot, QAbstractTableModel
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 
 class Stats(QAbstractTableModel):
-	_data = None # The numbers to calculate over
-	_filename = "";
+        _data = None # The numbers to calculate over
+        _filename = "";
 
-	def __init__(self):
-		""" Create the Stats object """
-		QAbstractTableModel.__init__(self)
+        def __init__(self):
+                """ Create the Stats object """
+                QAbstractTableModel.__init__(self)
 
-	dataChanged = Signal()
+        dataChanged = Signal()
 
-	@Slot()
-	def rowCount(self, parent):
-		if self._data is None:
-		return 0
-		return self._data.shape[0]
-	
-	@Slot()
-	def columnCount(self, parent):
-		if self._data is None:
-		return 0
-		return self._data.shape[1]
+        @Slot()
+        def rowCount(self, parent):
+                if self._data is None:
+                return 0
+                return self._data.shape[0]
+        
+        @Slot()
+        def columnCount(self, parent):
+                if self._data is None:
+                return 0
+                return self._data.shape[1]
 
-	@Slot()
-	def data(self, index, role):
-		if self._data is None:
-		return None
-		return float(self._data[index.row(),
-					index.column()])
+        @Slot()
+        def data(self, index, role):
+                if self._data is None:
+                return None
+                return float(self._data[index.row(),
+                                        index.column()])
 
-	dataChanged = Signal()
+        dataChanged = Signal()
 
-	@Property(str, notify=dataChanged)
-	def filename(self):
-		""" The name of the data file """
-		return self._filename
+        @Property(str, notify=dataChanged)
+        def filename(self):
+                """ The name of the data file """
+                return self._filename
 
 	@filename.setter
 	def filename(self, name):
-		""" Load a new data file """
-		self._filename = name
-		self.beginResetModel()
-		self._data = np.loadtxt(name)
-		self.endResetModel()
-		self.dataChanged.emit()
+	        """ Load a new data file """
+	        self._filename = name
+	        self.beginResetModel()
+	        self._data = np.loadtxt(name)
+	        self.endResetModel()
+	        self.dataChanged.emit()
 
 	@Property(float, notify=dataChanged)
 	def x_mean(self):

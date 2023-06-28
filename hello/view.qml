@@ -1,8 +1,8 @@
 import QtQuick 2.0
 
 Rectangle {
-  width: 200
-  height: 200
+  width: 600
+  height: 600
   color: "green"
   Text {
     text: "Hello World!"
