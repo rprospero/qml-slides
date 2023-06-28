@@ -1,6 +1,4 @@
 /_minted-slides/
-*.py
-*.qml
 *.pdf
 *.tex
 /slides.html
