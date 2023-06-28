@@ -426,12 +426,11 @@ class Stats(QObject):
             """ Create the Stats object """
             QObject.__init__(self)
 
-            <<FilenameSignal>>
-            dataChanged = Signal()
+        <<FilenameSignal>>
 
-            <<FilenameGetter>>
+        <<FilenameGetter>>
 
-            <<FilenameSetter>>
+        <<FilenameSetter>>
 
         @Property(float, notify=dataChanged)
         def x_mean(self):
