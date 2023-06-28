@@ -1,0 +1,28 @@
+#+TITLE: Qml Tutorial Readme
+
+This is the repository for my QML tutorial.  There's a couple of piece
+to take care of before we begin.
+
+* Establish a working environment
+
+For this tutorial, you will need both [[https://www.python.org][Python 3]] and [[https://git-scm.com][Git]]
+
+** Download the repo
+
+From the command prompt, in the convenient directory, run
+
+#+BEGIN_SRC sh
+git clone https://github.com/rprospero/qml-slides.git
+cd qml-slides
+git checkout tutorial
+#+END_SRC
+
+This will bring you onto the tutorial branch of the repo, which has all the code that we will be discussing.
+
+** Setup a python virtual environment
+
+
+
+* Access the Slides
+
+Once you have a working environment, access [[https://rprospero.github.io/qml-slides/][the slides]] to learn.
