@@ -22,35 +22,35 @@ Rectangle {
   }
 
   ChartView {
-  	title: "Scatters"
-  	anchors.top: loadButton.bottom
-  	anchors.bottom: parent.bottom
-  	anchors.left: parent.left
-  	anchors.right: parent.right
-  	antialiasing: true
-  	ValueAxis {
-  		id: axisX
-  		min: 0
-  		max: 12
-  	}
-  	
-  	ValueAxis {
-  		id: axisY
-  		min: 0
-  		max: 40
-  	}
-  	ScatterSeries {
-  		id: series
-  		name: myStats.filename
-  		axisX: axisX
-  		axisY: axisY
-  	}
-  	VXYModelMapper {
-  		model: myStats
-  		series: series
-  		xColumn:0
-  		yColumn:1
-  	}
+          title: "Scatters"
+          anchors.top: loadButton.bottom
+          anchors.bottom: parent.bottom
+          anchors.left: parent.left
+          anchors.right: parent.right
+          antialiasing: true
+          ValueAxis {
+                  id: axisX
+                  min: 0
+                  max: 12
+          }
+          
+          ValueAxis {
+                  id: axisY
+                  min: 0
+                  max: 40
+          }
+          ScatterSeries {
+                  id: series
+                  name: myStats.filename
+                  axisX: axisX
+                  axisY: axisY
+          }
+          VXYModelMapper {
+                  model: myStats
+                  series: series
+                  xColumn:0
+                  yColumn:1
+          }
   }
 
 }

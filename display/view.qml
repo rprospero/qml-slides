@@ -8,7 +8,7 @@ Rectangle {
   color: "#F0F0F0"
 
   Stats {
-	id: myStats
+        id: myStats
   }
 
   Text {

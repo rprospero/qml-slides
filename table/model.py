@@ -38,27 +38,27 @@ class Stats(QAbstractTableModel):
                 """ The name of the data file """
                 return self._filename
 
-	@filename.setter
-	def filename(self, name):
-	        """ Load a new data file """
-	        self._filename = name
-	        self.beginResetModel()
-	        self._data = np.loadtxt(name)
-	        self.endResetModel()
-	        self.dataChanged.emit()
+        @filename.setter
+        def filename(self, name):
+                """ Load a new data file """
+                self._filename = name
+                self.beginResetModel()
+                self._data = np.loadtxt(name)
+                self.endResetModel()
+                self.dataChanged.emit()
 
-	@Property(float, notify=dataChanged)
-	def x_mean(self):
-		""" The mean of the first column """
-		if self._data is None:
-			return 0
-		return np.mean(self._data[:, 0])
+        @Property(float, notify=dataChanged)
+        def x_mean(self):
+                """ The mean of the first column """
+                if self._data is None:
+                        return 0
+                return np.mean(self._data[:, 0])
 
-	@Property(float, notify=dataChanged)
-	def y_mean(self):
-		""" The mean of the second column """
-		if self._data is None:
-			return 0
-		return np.mean(self._data[:, 1])
+        @Property(float, notify=dataChanged)
+        def y_mean(self):
+                """ The mean of the second column """
+                if self._data is None:
+                        return 0
+                return np.mean(self._data[:, 1])
 
 qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")

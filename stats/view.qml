@@ -7,7 +7,7 @@ Rectangle {
   color: "#F0F0F0"
   Stats {id: myStats;}
   Text {
-	text: myStats.x_mean + ", " + myStats.y_mean
-	anchors.centerIn: parent
+        text: myStats.x_mean + ", " + myStats.y_mean
+        anchors.centerIn: parent
   }
 }

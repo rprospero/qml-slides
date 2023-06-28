@@ -4,12 +4,12 @@ from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 class Stats(QObject):
   _data = None
   def __init__(self):
-	QObject.__init__(self)
-	self.data_ = np.loadtxt("data.txt")
+        QObject.__init__(self)
+        self.data_ = np.loadtxt("data.txt")
   @Property(float)
   def x_mean(self):
-	return np.mean(self.data_[:, 0])
+        return np.mean(self.data_[:, 0])
   @Property(float)
   def y_mean(self):
-	return np.mean(self.data_[:, 1])
+        return np.mean(self.data_[:, 1])
 qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
