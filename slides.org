@@ -614,12 +614,12 @@ helper functions.
 #+BEGIN_SRC python
 @filename.setter
 def filename(self, name):
-        """ Load a new data file """
-        self._filename = name
-        self.beginResetModel()
-        self._data = np.loadtxt(name)
-        self.endResetModel()
-        self.dataChanged.emit()
+    """ Load a new data file """
+    self._filename = name
+    self.beginResetModel()
+    self._data = np.loadtxt(name.toLocalFile())
+    self.endResetModel()
+    self.dataChanged.emit()
 #+END_SRC
 
 #+BEGIN_SRC python :tangle table/model.py :noweb yes :exports none
