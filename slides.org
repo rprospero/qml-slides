@@ -35,10 +35,10 @@ the python and the QML to help emphasise the separation.
 
 ** Model
 
-- Performs detailed language and calculations
+- Performs detailed operations and calculations
 - Written in your favourite programming language
-- Has *no knowledge* of the screen or window
-- Only acts via =Properties=, =Signals=, and =Slots=
+- Has *no knowledge* of the screen
+- Only acts via =Signals=, =Slots=, and =Properties= 
 
 ** Vocab
 
@@ -52,7 +52,8 @@ The Qt object model has a couple of pieces of vocab
 
 - Describes the on screen display of the model
 - Always written in QML
-- Used to connect the Properties, Signals, and Slots of the models
+- Used to connect the Properties, Signals, and Slots of the models to
+  the behaviours on the screen.
 
 ** Why Bother?
 
@@ -130,7 +131,7 @@ ColumnLayout {
   Text {text: "Top"}
   Text {text: "Middle"}
   Text {text: "Bottom"}
-}j
+}
 #+END_SRC
 
 ** Containers
@@ -193,6 +194,8 @@ view.show()
 #+END_SRC
 
 ** Exercises
+
+Run =python main.py= in the =hello= folder
 
 - Change the background to a less garish colour
 - Give a more personal greeting
@@ -295,6 +298,8 @@ text: myStats.x_mean + ", " + myStats.y_mean
 
 ** Exercises
 
+Run =python main.py= in the =stats= folder
+
 - Create a new property to display the sum of the columns
 
 * Display
@@ -361,6 +366,8 @@ Rectangle {
 #+END_SRC
 
 ** Exercises
+
+Run =python main.py= in the =display= folder
 
 - Put the X and Y means on the same row
 - Move the title to the bottom of the window
@@ -483,6 +490,8 @@ Rectangle {
 
 ** Exercises
 
+Run =python main.py= in the =filename= folder
+
 - Set title text to the name of the data file
 
 * Interactive
@@ -543,6 +552,8 @@ Rectangle {
 #+END_SRC
 
 ** Exercises
+
+Run =python main.py= in the =interactive= folder
 
 - Using the =console.log= slot, bind to the =dataChanged= signal on
   the =Stats= model and print the file name to the console every time
@@ -714,6 +725,8 @@ Rectangle {
 
 ** Exercises
 
+Run =python main.py= in the =table= folder
+
 - The current code will produce glitches if the data file has more
   than two columns. Either ignore the other columns (easy) or allow an
   arbitrary column number.
@@ -823,6 +836,8 @@ Rectangle {
 #+END_SRC
 
 ** Exercises
+
+Run =python main.py= in the =chart= folder
 
 - The current chart range is hard coded. Add the necessary data
   properties to the Stats model to allow the axes to scale with the
