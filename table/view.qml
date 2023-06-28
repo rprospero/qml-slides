@@ -49,7 +49,7 @@ Rectangle {
                   implicitWidth: 280
                   implicitHeight: realText.height + 5
                   Text {
-                          id: readText
+                          id: realText
                           text: display
                   }
           }
