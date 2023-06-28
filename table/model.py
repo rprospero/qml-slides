@@ -14,22 +14,22 @@ class Stats(QAbstractTableModel):
 
         @Slot()
         def rowCount(self, parent):
-                if self._data is None:
+            if self._data is None:
                 return 0
-                return self._data.shape[0]
+            return self._data.shape[0]
         
         @Slot()
         def columnCount(self, parent):
-                if self._data is None:
+            if self._data is None:
                 return 0
-                return self._data.shape[1]
+            return self._data.shape[1]
 
         @Slot()
         def data(self, index, role):
-                if self._data is None:
+            if self._data is None:
                 return None
-                return float(self._data[index.row(),
-                                        index.column()])
+            return float(self._data[index.row(),
+                                    index.column()])
 
         dataChanged = Signal()
 
