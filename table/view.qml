@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.12
 import QtQuick.Controls 2.15
 import QtQuick.Dialogs 1.3
 import QtQuick.Layouts 1.2
@@ -40,13 +40,16 @@ Rectangle {
           anchors.top: loadButton.bottom
           anchors.bottom: parent.bottom
           anchors.left: parent.left
-          width: parent.width/2
+          width: parent.width
           model: myStats
+          columnSpacing:10
   
           delegate: Rectangle {
-                  implicitWidth: parent.width/2
-                  implicitHeight: 30
+                  color: "#F0F0F0"
+                  implicitWidth: 280
+                  implicitHeight: realText.height + 5
                   Text {
+                          id: readText
                           text: display
                   }
           }
