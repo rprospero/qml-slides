@@ -40,12 +40,12 @@ class Stats(QAbstractTableModel):
 
         @filename.setter
         def filename(self, name):
-                """ Load a new data file """
-                self._filename = name
-                self.beginResetModel()
-                self._data = np.loadtxt(name)
-                self.endResetModel()
-                self.dataChanged.emit()
+            """ Load a new data file """
+            self._filename = name
+            self.beginResetModel()
+            self._data = np.loadtxt(name.toLocalFile())
+            self.endResetModel()
+            self.dataChanged.emit()
 
         @Property(float, notify=dataChanged)
         def x_mean(self):
