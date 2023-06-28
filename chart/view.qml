@@ -15,6 +15,15 @@ Rectangle {
     filename: "file:data.txt"
   }
 
+  Button {
+          id: loadButton
+          anchors.top: titleText.bottom
+          anchors.left: parent.left
+          anchors.right: parent.right
+          text: "Load file"
+          onClicked: fileDialog.open()
+  }
+
   FileDialog {
     id: fileDialog
     title: "Choose a data file"
@@ -30,14 +39,14 @@ Rectangle {
           antialiasing: true
           ValueAxis {
                   id: axisX
-                  min: 0
-                  max: 12
+                  min: -5
+                  max: 5
           }
           
           ValueAxis {
                   id: axisY
-                  min: 0
-                  max: 40
+                  min: -2
+                  max: 2
           }
           ScatterSeries {
                   id: series
