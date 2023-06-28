@@ -21,6 +21,41 @@ This will bring you onto the tutorial branch of the repo, which has all the code
 
 ** Setup a python virtual environment
 
+We'll need certain python dependencies.  To not wreck your main
+python, we'll establish a virtual environment.
+
+#+BEGIN_SRC sh
+python -m venv .venv
+#+END_SRC
+
+We then need to active the environment, which can depend on your shell
+
+*** Windows PowerShell
+
+#+BEGIN_SRC powershell
+.venv\Scripts\Activate.ps1
+#+END_SRC
+
+*** Windows Dos Prompt
+
+#+BEGIN_SRC sh
+.venv\Scripts\activate.bat
+#+END_SRC
+
+
+*** Mac or Linux (not fish)
+
+#+BEGIN_SRC sh
+source .venv/bin/activate
+#+END_SRC
+
+** Install dependencies
+
+Now that we're in a custom python environment, we'll need to install our dependencies
+
+#+BEGIN_SRC sh
+pip install -r requirements.txt
+#+END_SRC
 
 
 * Access the Slides
