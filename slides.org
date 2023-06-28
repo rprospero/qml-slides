@@ -210,14 +210,14 @@ from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
 class Stats(QObject):
   _data = None
   def __init__(self):
-	QObject.__init__(self)
-	self.data_ = np.loadtxt("data.txt")
+        QObject.__init__(self)
+        self.data_ = np.loadtxt("data.txt")
   <<PropertyFloat>>
   def x_mean(self):
-	return np.mean(self.data_[:, 0])
+        return np.mean(self.data_[:, 0])
   <<PropertyFloat>>
   def y_mean(self):
-	return np.mean(self.data_[:, 1])
+        return np.mean(self.data_[:, 1])
 <<QmlRegisterType>>
 #+END_SRC
 
@@ -262,8 +262,8 @@ Rectangle {
   color: "#F0F0F0"
   <<LoadStats>>
   Text {
-	<<ViewStats>>
-	anchors.centerIn: parent
+        <<ViewStats>>
+        anchors.centerIn: parent
   }
 }
 #+END_SRC
@@ -351,7 +351,7 @@ Rectangle {
   color: "#F0F0F0"
 
   Stats {
-	id: myStats
+        id: myStats
   }
 
   <<DisplayHeader>>
@@ -646,21 +646,21 @@ class Stats(QAbstractTableModel):
 
         <<FilenameGetter>>
 
-	<<ResetModel>>
+        <<ResetModel>>
 
-	@Property(float, notify=dataChanged)
-	def x_mean(self):
-		""" The mean of the first column """
-		if self._data is None:
-			return 0
-		return np.mean(self._data[:, 0])
+        @Property(float, notify=dataChanged)
+        def x_mean(self):
+                """ The mean of the first column """
+                if self._data is None:
+                        return 0
+                return np.mean(self._data[:, 0])
 
-	@Property(float, notify=dataChanged)
-	def y_mean(self):
-		""" The mean of the second column """
-		if self._data is None:
-			return 0
-		return np.mean(self._data[:, 1])
+        @Property(float, notify=dataChanged)
+        def y_mean(self):
+                """ The mean of the second column """
+                if self._data is None:
+                        return 0
+                return np.mean(self._data[:, 1])
 
 qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
 #+END_SRC
@@ -670,19 +670,19 @@ qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
 #+NAME: ResetModel
 #+BEGIN_SRC python
 TableView {
-	anchors.top: loadButton.bottom
-	anchors.bottom: parent.bottom
-	anchors.left: parent.left
-	width: parent.width/2
-	model: myStats
+        anchors.top: loadButton.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        width: parent.width/2
+        model: myStats
 
-	delegate: Rectangle {
-		implicitWidth: parent.width/2
-		implicitHeight: 30
-		Text {
-			text: display
-		}
-	}
+        delegate: Rectangle {
+                implicitWidth: parent.width/2
+                implicitHeight: 30
+                Text {
+                        text: display
+                }
+        }
 }
 #+END_SRC
 
@@ -706,15 +706,15 @@ Change how we view the data without changing a single line of Python.
 #+NAME: ChartView
 #+BEGIN_SRC js :noweb no-export
 ChartView {
-	title: "Scatters"
-	anchors.top: loadButton.bottom
-	anchors.bottom: parent.bottom
-	anchors.left: parent.left
-	anchors.right: parent.right
-	antialiasing: true
-	<<Axes>>
-	<<ScatterPlot>>
-	<<ModelMapper>>
+        title: "Scatters"
+        anchors.top: loadButton.bottom
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.right: parent.right
+        antialiasing: true
+        <<Axes>>
+        <<ScatterPlot>>
+        <<ModelMapper>>
 }
 #+END_SRC
 
@@ -731,15 +731,15 @@ Give ranges for our X and Y axes
 #+NAME: Axes
 #+BEGIN_SRC js
 ValueAxis {
-	id: axisX
-	min: 0
-	max: 12
+        id: axisX
+        min: 0
+        max: 12
 }
 
 ValueAxis {
-	id: axisY
-	min: 0
-	max: 40
+        id: axisY
+        min: 0
+        max: 40
 }
 #+END_SRC
 
@@ -750,10 +750,10 @@ Create a scatter plot
 #+NAME: ScatterPlot
 #+BEGIN_SRC js
 ScatterSeries {
-	id: series
-	name: myStats.filename
-	axisX: axisX
-	axisY: axisY
+        id: series
+        name: myStats.filename
+        axisX: axisX
+        axisY: axisY
 }
 #+END_SRC
 
@@ -764,10 +764,10 @@ Connect the =myStats= model to the =series= scatter plot
 #+NAME: ModelMapper
 #+BEGIN_SRC js
 VXYModelMapper {
-	model: myStats
-	series: series
-	xColumn:0
-	yColumn:1
+        model: myStats
+        series: series
+        xColumn:0
+        yColumn:1
 }
 #+END_SRC
 
