@@ -84,7 +84,7 @@ import QtQuick 2.0
 #+END_SRC
 
 Every QML file starts with a set of imports.  You will always need to
-import `QtQuick`, as it is the default QML library.  We'll encounter
+import =QtQuick=, as it is the default QML library.  We'll encounter
 more libraries as we continue.
 
 ** Widgets
@@ -183,7 +183,7 @@ app.exec_()
 
 - Handles the display of the QML file
 - =setSource= picks the file
-- Must `show` the view for it to appear on screen
+- Must =show= the view for it to appear on screen
 
 #+Name: QQuickView
 #+BEGIN_SRC python
@@ -286,7 +286,7 @@ Create an instance of the stats object we defined earlier
 Stats {id: myStats;}
 #+END_SRC
 
-Add am instance of the =Stats= class we created to our application
+Use the instance of the =Stats= class we created
 
 #+NAME: ViewStats
 #+BEGIN_SRC js
