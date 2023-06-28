@@ -18,7 +18,7 @@ Rectangle {
   FileDialog {
     id: fileDialog
     title: "Choose a data file"
-    onAccepted: myStats.filename = fileDialog.selectedFile
+    onAccepted: myStats.filename = fileDialog.fileUrl
   }
 
   ChartView {
