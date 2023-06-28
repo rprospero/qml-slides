@@ -84,7 +84,7 @@ import QtQuick 2.0
 #+END_SRC
 
 Every QML file starts with a set of imports.  You will always need to
-import `QtQuick`, as it is the default QML library.  We'll encounter
+import =QtQuick=, as it is the default QML library.  We'll encounter
 more libraries as we continue.
 
 ** Widgets
@@ -183,7 +183,7 @@ app.exec_()
 
 - Handles the display of the QML file
 - =setSource= picks the file
-- Must `show` the view for it to appear on screen
+- Must =show= the view for it to appear on screen
 
 #+Name: QQuickView
 #+BEGIN_SRC python
@@ -286,7 +286,7 @@ Create an instance of the stats object we defined earlier
 Stats {id: myStats;}
 #+END_SRC
 
-Add am instance of the =Stats= class we created to our application
+Use the instance of the =Stats= class we created
 
 #+NAME: ViewStats
 #+BEGIN_SRC js
@@ -666,22 +666,49 @@ qmlRegisterType(Stats, "Tutorial", 1, 0, "Stats")
 
 ** Table View
 
-#+NAME: ResetModel
-#+BEGIN_SRC python
+#+NAME: TableView
+#+BEGIN_SRC js
 TableView {
         anchors.top: loadButton.bottom
         anchors.bottom: parent.bottom
         anchors.left: parent.left
-        width: parent.width/2
+        width: parent.width
         model: myStats
+        columnSpacing:10
 
         delegate: Rectangle {
-                implicitWidth: parent.width/2
-                implicitHeight: 30
+                color: "#F0F0F0"
+                implicitWidth: 280
+                implicitHeight: realText.height + 5
                 Text {
+                        id: realText
                         text: display
                 }
         }
+}
+#+END_SRC
+
+#+BEGIN_SRC js :tangle table/view.qml :noweb yes :exports none
+import QtQuick 2.12
+import QtQuick.Controls 2.15
+import QtQuick.Dialogs 1.3
+import QtQuick.Layouts 1.2
+import Tutorial 1.0
+
+Rectangle {
+  width: 600
+  height: 600
+  color: "#F0F0F0"
+
+  <<FilenameStats>>
+
+  <<FileDialog>>
+
+  <<DisplayHeader>>
+
+  <<FileButton>>
+
+  <<TableView>>
 }
 #+END_SRC
 
